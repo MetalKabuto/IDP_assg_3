@@ -61,13 +61,11 @@ namespace D15_inlämning
             ämneslista[4] = brom;
             ämneslista[5] = kvicksilver;
 
-            //testar så att arrayen fungerar
-            ämneslista[0].Print();
-            ämneslista[1].Print();
-            ämneslista[2].Print();
-            ämneslista[3].Print();
-            ämneslista[4].Print();
-            ämneslista[5].Print();
+            //uppgift 5, foreach loop.
+            foreach (Grundämne x in ämneslista)
+            {
+                x.Print();
+            }
         }
     }
 }
