@@ -77,6 +77,22 @@ namespace D15_inlämning
                     Console.WriteLine(x.namn);
                 }
             }
+
+            //gör ett tomrum så att det blir lättare att läsa i konsolen.
+            Console.WriteLine("");
+
+            /*uppgift 7, skriv ämnena med smältpunkt < 273 och kok > 273. antar att båda ska vara uppfyllda samtidigt?
+            annars kan man enkelt byta ut && i 'if' satsen mot ||.*/
+            foreach (Grundämne x in ämneslista)
+            {
+                //som i loopen ovan blir variablerna attributen som behövs.
+                double smält = x.smältpunkt;
+                double kok = x.kokpunkt;
+                if (smält < 273.16 && kok > 273.16)
+                {
+                    Console.WriteLine($"{x.namn} har en smältpunkt på {smält}kelvin, kokpunkten är {kok}kelvin");
+                }
+            }
         }
     }
 }
