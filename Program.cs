@@ -20,10 +20,11 @@ namespace D15_inlämning
             public string Print()
             {
                 Console.WriteLine($"Grundämne: {namn}");
-                Console.WriteLine($"Typ: {typ}");
                 Console.WriteLine($"Antal atomer: {Z}");
+                Console.WriteLine($"Typ: {typ}");
                 Console.WriteLine($"Smältpunkt: {smältpunkt}");
                 Console.WriteLine($"Kokpunkt: {kokpunkt}");
+                Console.WriteLine("");
                 //får error om det inte finns med en 'return', även om den inte behövs
                 return namn;
             }
@@ -41,9 +42,32 @@ namespace D15_inlämning
                 namn = "guld", Z = 79, typ = "metall", smältpunkt = 1337.33, kokpunkt = 3243
             };
 
-            syre.Print();
-            järn.Print();
-            guld.Print();
+            // arrayen för uppgift 4. skrev 3 null för att fylla ut elementen.
+            Grundämne[] ämneslista = new Grundämne[6] {syre, järn, guld, null, null, null };
+
+            //skapar ämnena som ska "direkt-tilldelas" arrayen.
+            Grundämne väte = new Grundämne() { 
+                namn = "väte", Z = 1, typ = "ickemetall", smältpunkt = 13.99, kokpunkt = 20.271
+            };
+            Grundämne brom = new Grundämne() { 
+                namn = "brom", Z = 35, typ = "ickemetall", smältpunkt = 265.8, kokpunkt = 332.0
+            };
+            Grundämne kvicksilver = new Grundämne() { 
+                namn = "kvicksilver", Z = 80, typ = "metall", smältpunkt = 234.3210, kokpunkt = 629.88
+            };
+
+            //uppgift 4. Tror det är såhär man direkt-tilldelar?
+            ämneslista[3] = väte;
+            ämneslista[4] = brom;
+            ämneslista[5] = kvicksilver;
+
+            //testar så att arrayen fungerar
+            ämneslista[0].Print();
+            ämneslista[1].Print();
+            ämneslista[2].Print();
+            ämneslista[3].Print();
+            ämneslista[4].Print();
+            ämneslista[5].Print();
         }
     }
 }
