@@ -26,7 +26,7 @@ namespace D15_inlämning
                 Console.WriteLine($"Kokpunkt: {kokpunkt}");
                 Console.WriteLine("");
                 //får error om det inte finns med en 'return', även om den inte behövs
-                return namn;
+                return typ;
             }
         }
         static void Main(string[] args)
@@ -65,6 +65,17 @@ namespace D15_inlämning
             foreach (Grundämne x in ämneslista)
             {
                 x.Print();
+            }
+
+            //uppgift 6, skriv endast metall namn
+            foreach (Grundämne x in ämneslista)
+            {
+                //y blir elementets 'typ' värde.
+                string y = x.typ;
+                if (y == "metall")
+                {
+                    Console.WriteLine(x.namn);
+                }
             }
         }
     }
